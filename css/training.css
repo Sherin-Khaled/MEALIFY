@@ -1,0 +1,605 @@
+*, *::after, *::before {
+    box-sizing: border-box; /* this star means to be applied to all*/
+}
+
+
+body {
+    margin:0;
+}
+.test {
+    width: 1200px;
+    height: 900px;
+    background-image: url('../images of new assignment/Pyramids for youtube.jpg'), url('../images of new assignment/Grand Museum.jpg');
+    /*background-size: cover;*/
+    background-size: contain,cover;
+    /*repeat-x, repeat-y, no-repeat , default : repeat*/
+    background-repeat: no-repeat, no-repeat;
+    /*background-position: top right; i mean u can add two positions in name or percentage like:50%*/
+    background-position: center, top right;
+    /*background-position: 20px 0px , 100% 100%;*/
+    background-attachment: fixed; /*CSS property is used to control the scrolling behavior of a background image. */
+    /*background-attachment: scroll;*/
+    border: 5px solid salmon;
+    color: aliceblue;
+}
+
+.one {
+    background-color: aqua;
+    position: static; /*When an element is positioned as static, it is not affected by the top, right, bottom, or left properties.*/
+    left: 50px;
+    top: 20px;
+    width: 600px;
+    height: 50vh;
+}
+.two {
+    background-color: rgba(0, 255, 255, 0.5);
+    position: absolute; /*The element is removed from the normal document flow. top, right, bottom, and left properties are used to specify the position.
+    */
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    height: 300px;
+    color: aliceblue;
+    padding: 5px;
+}
+.three {
+    background-color: rgba(2, 110, 110, 0.5);
+    position: absolute; /*The element is removed from the normal document flow. top, right, bottom, and left properties are used to specify the position.
+    */
+    left: 50px;
+    top: 20px;
+    width: auto;
+    height: auto;
+    color: aliceblue;
+    padding: 5px;
+    margin: auto; /*margins don't affect its position relative to other elements. Instead, its position is determined by the left, top, right, and bottom properties.
+
+    Conclusion*/
+}
+
+.four {
+    background-color: rgb(255, 0, 221);
+    position: sticky; /*Hybrid Positioning: An element with position: sticky; starts as a relatively positioned element and becomes fixed when it reaches a specified threshold*/
+    right: 0px;
+    bottom: 0;
+
+    width: auto;
+    
+}
+
+.parent {
+    width: 600px;
+    height: 600px;
+    background-color: chocolate;
+    position: relative; /*i wrote this only to control my child to be the position i determind relative to the parent*/
+}
+.child {
+    width: 50px;
+    height: 50px;
+    background-color: pink;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.navigation {
+    background-color: rgba(255, 99, 71, 0.5);
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: right;
+    width: 100%;
+    color: white;
+    z-index: 999;
+}
+
+li {
+    display: inline-block;
+    list-style: none;
+    margin-right: 30px;
+    
+}
+
+.firstletter::first-letter {
+    color: blue;
+    font-size: 70px;
+}
+
+.firstline::first-line {
+    color: rgba(168, 6, 6, 0.5);
+}
+
+::selection {
+    background-color: greenyellow;  /*This styling will apply to any text that a user selects on your webpage, making the selected text appear with a black background and white text.*/
+    color: white;
+}
+
+h4 {
+    color: gold;
+    text-align: center;
+}
+
+h4::before {
+    content: "first"; /*for adding content*/
+    color: black;
+}
+h4::after {
+    content: "web";
+    color: aquamarine;
+}
+
+h5 {
+    color: gold;
+    text-align: center;
+    position: relative;
+}
+
+h5::before {
+    content: "";
+    background-color: rgba(100, 149, 237, 0.4);
+    color: aliceblue;
+    position: absolute;     /*another use for absolute*/
+    width: 50%;
+    height: 20px;
+    bottom: 0;
+}
+
+.disappear {
+    display: none;
+}
+
+.disappear-2 {
+    visibility: hidden;
+}
+
+.overflow-1 {
+    width: 500px;
+    height: 200px;
+    background-color: aliceblue;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.overflow-1 .colorofoverflow {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(224, 142, 19);
+    border-radius: 50%;
+    position: relative;
+    right: 30px; /* Move 10px to the left from its normal position */
+    bottom: 30px;
+    z-index: 3;
+}
+
+.overflow-2 {
+    height: 200px;
+    background-color: cadetblue;
+    overflow: scroll;
+    /* overflow: visible; Default*/
+    white-space: nowrap;
+}
+
+.parent-1 {
+    
+    background-color: blueviolet;
+    overflow: auto; /*solve the problem of disappearing parent when i make float to child but it doesn't solve the problem 
+    of the section after the child section so it's prefer to use clear-fix:both*/
+    
+    
+}
+
+.child-1 {
+    height: 200px;
+    width: 20%;
+    background-color: crimson;
+    /*margin-top: 30px;   overflow & margin collapsing*/
+    float: left;
+    margin-right: 10px;
+}
+
+.clear-fix {
+    clear: both;
+}
+
+.tryhover {
+    width: 400px;
+    height: 200px;
+    background-color: brown;
+    /*transition-property: width;
+    transition-duration: 1ms;*/
+    /*transition: all 3s .5s linear; we can say all if we write make more than one property*/
+    transition: width 3s ,5s linear, height 1s 1s;
+}
+.tryhover:hover {
+    width: 600px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50%;
+    border: 5px solid gray;
+    padding: 5px;
+    margin: 10px;
+}
+.parent-2 {
+    width: 800px;
+    height: 500px;
+    background-color: blanchedalmond;
+}
+.test-2 {
+    width: 400px;
+    height: 200px;
+    background-color: blue;
+    transition: background-color 1s .5s linear, transform 1s .5s linear; /*Note: write transform not rotate*/
+    /*transform: rotate(12deg); we can write it here but it will remain rotated */
+    transform-origin: right bottom ; /*if i want to rotate from specific point not the center*/
+}
+.parent-2:hover .test-2 {
+   background-color: aqua;
+   transform: rotate(12deg);
+   transform: rotate(1turn);
+   transform: rotateX(180deg);
+   transform: rotateY(180deg); /*Note: transform deg takes the last one i wrote in coding*/
+   transform: scale(2); /*double it's width*/
+   transform: scalex(2);
+   transform: rotate(180deg) scaleY(2);
+}
+
+.test-3 {
+    width: 400px;
+    height: 200px;
+    background-color: rgb(17, 115, 142);
+    transition-property: width;
+    transition-duration: 1ms;
+    transition-delay: 1000ms;
+}
+
+.test-3:hover {
+    width: 100%;
+}
+
+.parent-3:hover .child-2,.parent-3:hover .child-3,.parent-3:hover .child-4 {
+    background-color: blueviolet;
+    width: 800px;
+    height: 500px;
+}
+
+.child-2, .child-3, .child-4 {
+    width: 400px;
+    height: 200px;
+    float: left;
+    background-color: rgb(47, 13, 78);
+}
+
+.child-2 {
+    transition-delay: 1s;
+    /*transition-timing-function: ease;*/
+}
+
+.child-3 {
+    transition-delay: 2s;
+    /*transition-timing-function: ease-in-out;*/
+}
+
+.child-4 {
+    /*transition-delay: 3s;*/
+    transition-timing-function: cubic-bezier(.17,.67,.83,.67);
+}
+
+.parent-4 {
+    width: 800px;
+    height: 500px;
+    background-color: rgb(184, 169, 145);
+    position: relative;
+}
+
+.content {
+    
+    z-index: 4;
+}
+
+.test-4::before {
+    content: '';
+    background-color: brown;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 1s linear;
+    transform-origin: top left;
+}
+.parent-4:hover .test-4::before {
+    transform: scale(2);
+}
+
+.parent-5 {
+    background-color: cornsilk;
+}
+
+.item {
+    box-sizing: content-box; /*Default : Total width = content width + padding + border. Total height = content height + padding + border.*/
+    box-sizing: border-box; /*Total width = specified width (content + padding + border). Total height = specified height (content + padding + border).*/
+    width: 33.3%;
+    background-color: cornflowerblue;
+    padding: 30px;
+    border: 5px solid rgb(249, 163, 244);
+    float: left;
+}
+.item img {
+    width: 100%;
+}
+
+.test-5 {
+    text-align: center;
+    background-color: aqua;
+    width: 25%;
+    float: left;
+    padding: 30px;
+    border: 10px solid teal;
+    /* parent ==> padding ==> margin <== child */
+}
+
+.inner {
+    background-color: aquamarine;
+}
+
+.test-5 img {
+    width: 100%;
+}
+.test-6 {
+    width: 33.3%;
+    float: left;
+    background-color: tomato;
+    padding: 20px;
+    border: 10px solid salmon;
+}
+
+.inner-2 {
+    background-color: rgb(127, 242, 255);
+}
+
+.test-6 img {
+    width: 100%;
+}
+.test-7 {
+    width: 25%;
+    float: left;
+    background-color: tomato;
+    padding: 20px;
+    border: 10px solid salmon;
+}
+
+.inner-3 {
+    background-color: rgb(127, 242, 255);
+}
+
+.test-7 img {
+    width: 100%;
+}
+
+@media print {
+    body {
+        font-size: 30px;
+        background-color: rgb(254, 233, 233);
+        color: rgb(219, 181, 254);
+    }
+
+    .sec-2 {
+        display: none;
+    }
+}
+
+/* @media  screen and (max-width: 900px) {
+    body {
+        background-color: rgb(180, 4, 139);
+    }
+} */
+
+/* @media all {                                                                     style all website
+    body {
+        background-color: blue;
+    }
+
+    p {
+        font-size: 50px;
+    }
+    h2 {
+        background-color: aqua;
+    }
+} */
+
+/* 0 600*/
+
+@media screen and (min-width: 0) and (max-width: 600px) {
+    body {
+        background-color: aquamarine;
+    }
+    .test-7 {
+        width: 100%;
+    }
+}
+/* 601 900*/
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+    body {
+        background-color: rgb(255, 127, 244);
+    }
+    .test-7 {
+        width: 50%;
+    }
+}
+/* 901 1200*/
+
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+    body {
+        background-color: rgb(255, 127, 178);
+    }
+    .test-7 {
+        width: 33.3%;
+    }
+}
+/* 1200 2000*/
+
+@media screen and (min-width: 1200px) and (max-width: 2000px) {
+    body {
+        background-color: rgb(153, 127, 255);
+    }
+    .test-7 {
+        width: 25%;
+    }
+}
+
+/*Best use min width only not min & max*/
+
+/* @media screen and (min-width: 0) {
+    body {
+        background-color: aquamarine;
+    }
+}
+
+@media screen and (min-width: 601px) {
+    body {
+        background-color: rgb(255, 127, 244);
+    }
+}
+
+@media screen and (min-width: 901px) {
+    body {
+        background-color: rgb(255, 127, 178);
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        background-color: rgb(153, 127, 255);
+    }
+}*/
+
+
+/*sm*/
+
+/* @media (min-width: 640px) {
+    body {
+        background-color: aquamarine;
+    }
+}
+
+/* md  
+@media screen and (min-width: 768px) {
+    body {
+        background-color: rgb(255, 127, 244);
+    }
+}
+
+/*lg
+@media screen and (min-width: 1024px) {
+    body {
+        background-color: rgb(255, 127, 178);
+    }
+}
+
+/* xl
+@media screen and (min-width: 1280px) {
+    body {
+        background-color: rgb(153, 127, 255);
+    }
+}*/
+
+.parent-test {
+    background-color: aliceblue;
+    display: flex;
+    width: 400px;
+    height: 200px;
+
+    flex-direction: row; /* Main axis is hotrizontal x==> main y ==> cross */
+    flex-direction: column; /* Main axis is vertical  y==> main x==> cross */
+    flex-direction: row-reverse;
+    flex-direction: column-reverse;
+    flex-direction: row;
+    flex-wrap: nowrap;  /*This CSS property prevents text from wrapping onto the next line. All the text will remain on a single line, and if it exceeds the width of the container, it will overflow.*/
+    flex-wrap: wrap-reverse; /*allows the items if the space is enough in the parent the next item will be on new line but in the resverse*/
+    flex-flow: row nowrap; /*you can write both property in flex-flow*/
+
+    justify-content: flex-start;
+    justify-content: flex-end;
+
+    justify-content: space-around;
+}
+
+.item-test {
+    background-color: blue;
+    width: 25%;
+}
+
+.parent-test-2 {
+    width: 1200px;
+    height: 500px;
+    background-color: antiquewhite;
+    display: flex;
+    flex-flow: column wrap;
+    /*justify-content: space-evenly;
+    justify-content: space-around;
+    justify-content: space-between;
+
+    /*cross*/
+    /*align-items: flex-start;
+    align-items: flex-end;
+    align-items: stretch;
+    align-items: baseline;
+    align-items: center;*/
+    align-content: flex-start;
+    align-content: flex-end;
+    justify-content: center;
+}
+
+.item-test-2 {
+    background-color: blueviolet;
+    width: 15%;
+    align-self: center;
+    height: 10vh;
+}
+
+/* Order, flex-grow, flex-shrink, flex-basis, flex*/
+.parent-test-3 {
+    width: 1000px;
+    height: 500px;
+    background-color: rgb(81, 66, 47);
+    display: flex;
+}
+/* 1000 - 600px = 400px  explain flex-grow */
+.item-test-3-1 {
+    background-color: lightblue;
+    
+    align-self: center;
+    height: 10vh;
+    order: 0; /*order items*/
+    flex-grow: 2; /*make this item double in width the other items*/
+    /* 2 * 80 = 160px + 100 ==> 260px explain flex-grow */
+}
+
+.item-test-3-2 {
+    background-color: lightcoral;
+    
+    align-self: center;
+    height: 10vh;
+    order: 2;
+    flex-grow: 1;  /* 1 * 80 = 160px + 100 ==> 260px explain flex-grow */
+}
+.item-test-3-3 {
+    background-color: lightgoldenrodyellow;
+    
+    align-self: center;
+    height: 10vh;
+    order: -1;
+    flex-grow: 1; /* 1 * 80 = 160px + 100 ==> 260px explain flex-grow */
+}
+.item-test-3-4 {
+    background-color: lightgreen;
+    
+    align-self: center;
+    height: 10vh;
+    order: 3;
+    flex-shrink: 1; /*explain flex-shrink */
+}
